@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.20)
+project(long_number)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -std=c++20")
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+include_directories(long_number)
+add_subdirectory(long_number)
+
+add_executable(pi pi_calc.cpp)
+target_link_libraries(pi long_number)
+
+add_executable(test tests.cpp)
+target_link_libraries(test long_number)
