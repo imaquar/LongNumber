@@ -1,57 +1,62 @@
-# LongNum: Библиотека длинной арифметики
+# LongNumber: Arbitrary Precision Arithmetic Library
 
-## Описание
-LongNum — это библиотека для работы с длинной арифметикой в двоичной системе счисления с фиксированной точкой. Она позволяет выполнять основные арифметические операции с высокой точностью и поддерживает пользовательскую настройку точности вычислений.
+## Description
+LongNumber is a library for performing arbitrary precision arithmetic in a binary fixed-point format. It allows precise arithmetic operations and supports user-defined computation precision.
 
-## Возможности
-- Класс `LongNum` для работы с длинными числами.
-- Поддержка операций:
-  - Арифметические: `+`, `-`, `*`, `/`.
-  - Сравнения: `==`, `!=`, `<`, `>`.
-- Создание длинного числа из литерала с плавающей точкой: `operator""_longnum(long double number);`
-- Гибкая настройка точности вычислений (количество бинарных разрядов после запятой).
-- Покрытие всех функций тестами.
-- Программа для вычисления числа Пи с заданной точностью.
+## Features
+- `long_number` class for handling large numbers.
+- Supported operations:
+  - Arithmetic: `+`, `-`, `*`, `/`.
+  - Comparison: `==`, `!=`, `<`, `>`.
+- Creation of a long number from a floating-point literal: `operator""_longnum(long double number);`
+- Flexible computation precision setting (number of binary digits after the decimal point).
+- Comprehensive test coverage for all functions.
+- A program for calculating π (Pi) with a specified precision.
 
-## Структура проекта
+## Project Structure
 ```
 📁 longnum_project/
-├── src/                # Исходный код библиотеки
-│   ├── longnum.hpp     # Объявление класса LongNum
-│   ├── longnum.cpp     # Реализация класса LongNum
-├── tests/              # Тесты
-│   ├── test_longnum.cpp # Тестирование библиотеки
-├── pi/                 # Программа вычисления числа Пи
-│   ├── pi.cpp          # Реализация вычисления числа Пи
-├── Makefile            # Сборка проекта
-└── README.md           # Описание проекта
+├── pi_calc.cpp        # Pi computation program implementation
+├── tests.cpp          # Library testing
+├── long_number.hpp    # Declaration of LongNum class
+├── long_number.cpp    # Implementation of LongNum class
+├── Makefile           # Make build script
+├── CMakeLists.txt     # CMake build configuration
+├── README.md          # Project description
 ```
 
-## Установка и сборка
-Проект собирается с помощью `make`:
+## Installation & Build
+The project is built using `make`:
 
-- **Сборка библиотеки и всех программ:**
+- **Build the library and all programs:**
   ```sh
   make
   ```
 
-- **Запуск тестов:**
+- **Run tests:**
   ```sh
   make test
   ```
-  Вывод каждого теста содержит вердикт `OK` или `FAIL`.
+  Each test outputs a verdict of `OK` or `FAIL`.
 
-- **Вычисление числа Пи с 100 знаками после запятой:**
+- **Compute π with 100 decimal places:**
   ```sh
   make pi
   ```
 
-- **Вычисление числа Пи с произвольной точностью (например, 50 знаков):**
+- **Compute π with a custom precision (e.g., 50 decimal places):**
   ```sh
   ./pi_calc 50
   ```
 
-## Требования
-- Компилятор C++ (GCC или Clang с поддержкой C++17 и выше)
-- `make`
+Alternatively, you can build the project using CMake:
 
+```sh
+mkdir build && cd build
+cmake ..
+make
+```
+
+## Requirements
+- C++ compiler (GCC or Clang with C++17 support or higher)
+- `make` or `cmake`
