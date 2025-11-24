@@ -15,7 +15,8 @@ LongNumber is a library for performing arbitrary precision arithmetic in a binar
 
 ## Project Structure
 ```
-📁 longnum_project/
+
+📁 LongNumber/
 ├── pi_calc.cpp        # Pi computation program implementation
 ├── tests.cpp          # Library testing
 ├── long_number.hpp    # Declaration of LongNum class
